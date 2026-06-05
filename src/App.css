@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: white;
+}
+
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 400px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    text-align: center;
+    color: gray;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.login-card input:focus {
+    border-color: #007aff;
+    outline: none;
+}
+
+.btn-success {
+    background: #34c759;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-success:hover {
+    background: #2db14e;
+}
+
+.btn-danger {
+    background: #ff3b30;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background: #e6352b;
+}
+
+.btn-primary {
+    background: #007aff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: #0066d9;
+}
+
+.app {
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.header {
+    background: #007aff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.header h1 {
+    font-size: 18px;
+}
+
+.user-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-name {
+    color: white;
+    background: rgba(255,255,255,0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.logout-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+}
+
+.chat-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-with {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.online {
+    background: #34c759;
+}
+
+.status-dot.offline {
+    background: #999;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.status-dot.online {
+    animation: blink 1.5s infinite;
+}
+
+.messages-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.message {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.message.my {
+    justify-content: flex-end;
+}
+
+.message.friend {
+    justify-content: flex-start;
+}
+
+.message.system {
+    justify-content: center;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.message.my .message-bubble {
+    background: #007aff;
+    color: white;
+}
+
+.message.friend .message-bubble {
+    background: #e5e5ea;
+    color: #333;
+}
+
+.message.system .message-bubble {
+    background: #f0f0f0;
+    color: #666;
+    font-size: 11px;
+    padding: 4px 10px;
+}
+
+.sender {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.time {
+    font-size: 9px;
+    text-align: right;
+    margin-top: 3px;
+    opacity: 0.7;
+}
+
+.action-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 20px;
+    border: 1px solid #eee;
+}
+
+.action-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.action-subtitle {
+    text-align: center;
+    color: gray;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.or-divider {
+    text-align: center;
+    margin: 20px 0;
+    color: #aaa;
+}
+
+.or-divider::before {
+    content: '---';
+    letter-spacing: -1px;
+    margin-right: 10px;
+    color: #ddd;
+}
+
+.or-divider::after {
+    content: '---';
+    letter-spacing: -1px;
+    margin-left: 10px;
+    color: #ddd;
+}
+
+.textarea-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 11px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+.textarea-field:focus {
+    outline: none;
+    border-color: #007aff;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 13px;
+}
+
+.waiting-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.waiting-spinner {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.waiting-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.waiting-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-area {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+.input-area input:focus {
+    outline: none;
+    border-color: #007aff;
+}
+
+.input-area button {
+    width: 42px;
+    height: 42px;
+    background: #007aff;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.input-area button:hover {
+    background: #0066d9;
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+        padding: 25px;
+    }
+    
+    .action-card {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .message-bubble {
+        max-width: 85%;
+    }
+    
+    .chat-header {
+        padding: 10px;
+    }
+    
+    .messages-area {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 16px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
